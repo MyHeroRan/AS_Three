@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="这是内容布局,啊撒大苏打大大撒da巅峰"
+        android:gravity="center"
+        android:background="#AABB22"
+        android:textColor="#FFFFFF"/>
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="测试可折叠布局" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ccff99"
+        android:onClick="showView">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="分组一"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#AABB22"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+    </LinearLayout>
+    <com.example.admin.as_first.coustom.ExpandableLayout
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        app:el_headerLayout="@layout/view_expand_head"
+        app:el_contentLayout="@layout/view_expand_content"
+        app:el_duration="500"
+        android:id="@+id/expand_layout" />
+
+</LinearLayout>

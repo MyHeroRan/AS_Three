@@ -1,0 +1,39 @@
+//Android APP插件（打包得到的是.apk文件）
+apply plugin: 'com.android.application'
+//Android库插件（打包得到的是.aar文件）
+//apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23 //设置编译时用的Android版本
+    buildToolsVersion "23.0.3"//编译的工具版本，可以在SDK Manager中查看
+    //最好把所有的编译工具buildTool都下载下来，你导入的项目或者类库不一样用的是那个版本的buildTool
+
+    //defaultConfig App的默认配置
+    defaultConfig {
+        applicationId "com.example.admin.as_first"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+
+    //lintOptions：设置Lint的属性
+    //signingConfigs：配置签名信息
+    //buildTypes 配置构建类型，可打出不同类型的包，默认有debug和release两种
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    //compileOptions：设置编译的相关属性
+    //packagingOptions：设置APK包的相关属性
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile project(':library')
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.squareup.picasso:picasso:2.3.2'
+}
